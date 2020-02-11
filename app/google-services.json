@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "162035649443",
+    "firebase_url": "https://virtualcook-7aff7.firebaseio.com",
+    "project_id": "virtualcook-7aff7",
+    "storage_bucket": "virtualcook-7aff7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162035649443:android:270a1334ea9cff8c252816",
+        "android_client_info": {
+          "package_name": "com.sehrishsheikh.virtualcook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162035649443-qdac3r0j5kk6smsu1ubk82fu2cbu70ru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sehrishsheikh.virtualcook",
+            "certificate_hash": "04a07679e755e19f8c8b0a1738d12e9d211361d8"
+          }
+        },
+        {
+          "client_id": "162035649443-vjgft97t14v9ohbb9frd35g3kdhq9jug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVH_LY7gfxeO9HdrnUuS2pjtEcALjJy58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162035649443-vjgft97t14v9ohbb9frd35g3kdhq9jug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

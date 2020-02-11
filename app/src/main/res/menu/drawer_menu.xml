@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+
+    <item android:id="@+id/item1_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:iconTint="@color/White"
+        />
+
+    <item android:id="@+id/item3_recipebox"
+        android:title="Recipe Box"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:iconTint="@color/White"/>
+
+    <item android:id="@+id/item6_avaliable_dishes"
+        android:title="Available Food"
+        android:icon="@drawable/ic_room_service_black_24dp"
+        android:iconTint="@color/White"/>
+
+
+    <item android:id="@+id/item4_shopinglist"
+        android:title="Shoping List"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:iconTint="@color/White"/>
+
+
+    <item
+        android:id="@+id/itme2_dinnerspinner_fragment"
+        android:title="Dinner Spinner"
+        android:iconTint="@color/White">
+
+        <menu>
+
+            <group>
+
+
+                <item android:id="@+id/fragment_1"
+                    android:title="Dish Type"
+                    android:icon="@drawable/ic_room_service_black_24dp"
+                    android:iconTint="@color/White"/>
+
+                <item android:id="@+id/fragment_2"
+                    android:title="Dish Ingredients"
+                    android:icon="@drawable/ic_restaurant_black_24dp"
+                    android:iconTint="@color/White"/>
+
+                <item android:id="@+id/fragment_3"
+                    android:title="Ready In"
+                    android:icon="@drawable/ic_timer_black_24dp"
+                    android:iconTint="@color/White"/>
+
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:id="@+id/item5_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:iconTint="@color/White"
+        />
+
+</group>
+
+</menu>

@@ -1,0 +1,124 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView_id"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="165dp"
+    android:layout_height="340dp"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="3dp"
+    cardView:cardCornerRadius="3dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/rImageView_IVID"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/loading1"/>
+
+        <TextView
+            android:id="@+id/rTitleTv_TVID"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:text="Recipe name"
+            android:fontFamily="sans-serif-light"
+            android:textSize="15sp"
+            android:textColor="#2d2d2d"/>
+
+        <LinearLayout
+            android:layout_marginTop="-10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp">
+
+            <ImageView
+
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_black_24dp"
+                android:tint="@color/gradStart"/>
+            <ImageView
+
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_black_24dp"
+                android:tint="@color/gradStart"/>
+            <ImageView
+
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_black_24dp"
+                android:tint="@color/gradStart"/>
+            <ImageView
+
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_black_24dp"
+                android:tint="@color/gradStart"/>
+            <ImageView
+
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/star"/>
+
+
+
+            <TextView
+                android:id="@+id/home_recipe_stars_id"
+                android:textAlignment="center"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-4dp"
+
+                android:textSize="17dp"
+                android:text="5"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/dotted"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recipe by"
+                android:fontFamily="sans-serif-light"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/rDescription_TVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Smye Sareel"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

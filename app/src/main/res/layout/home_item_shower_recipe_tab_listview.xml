@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <!--make static-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="@color/gray"/>
+
+        <ImageView
+            android:layout_marginLeft="8dp"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_donut_small_black_24dp"
+            android:tint="@color/gray"
+            />
+
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:shadowColor="#00803636"
+            android:text=" 2 sevings"
+            android:textSize="16sp" />
+
+
+
+    </LinearLayout>
+
+    <!--list view for ingredients-->
+    <ListView
+        android:id="@+id/home_item_recipe_tab_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="30dp">
+
+    <LinearLayout
+        android:layout_marginLeft="60dp"
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/logo"
+            android:layout_alignTop="@+id/logo"
+            android:drawableRight="@drawable/ic_restaurant_black_24dp"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:fontFamily="cursive"
+            android:text="@string/virtual"
+            android:textColor="@color/graydark"
+            android:textSize="40dp"
+            android:layout_alignLeft="@+id/logo" />
+
+        <TextView
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/logo"
+            android:fontFamily="cursive"
+            android:text="CooK"
+            android:textColor="@color/pink"
+
+            android:textSize="40dp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/logo"
+        android:id="@+id/txtUploadImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Please Upload Image"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
+
+
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_below="@+id/txtUploadImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/imagepreview" />
+
+    <ProgressBar
+        android:id="@+id/uploadProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgPreview" />
+
+    <Button
+        android:id="@+id/chooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uploadProgress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:drawableLeft="@drawable/ic_photo_camera_black_24dp"
+        android:text="Chooese Image to           Upload"
+        android:textSize="16sp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chooseImage"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="70dp">
+
+        <EditText
+            android:id="@+id/imgDescription"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/text_input_layout"
+            android:layout_alignBaseline="@+id/text_input_layout"
+            android:layout_alignStart="@+id/text_input_layout"
+            android:layout_alignLeft="@+id/text_input_layout"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Recipe Name"
+            tools:ignore="DuplicateIds" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnUploadImage"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/btn_bg"
+        android:drawableLeft="@drawable/ic_file_upload_black_24dp"
+        android:drawableTint="@color/White"
+        android:text="Upload Image"
+        android:textColor="@color/White"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="View Gallery"
+        android:id="@+id/viewGallery"
+        android:textSize="20sp"
+        android:visibility="gone"
+
+        />
+</RelativeLayout>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        app:titleTextColor="@color/black">
+
+    </androidx.appcompat.widget.Toolbar>
+    <View
+        android:id="@+id/view_below_toolbar"
+        android:layout_below="@id/toolbar_home_item1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_below="@id/view_below_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="186dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp">
+
+                <ImageView
+                    android:id="@+id/rImageView_IVID"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/recipe1"
+                    android:background="@drawable/loading1"/>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/rTitleTv_TVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recipe"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-light"/>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp">
+
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_star_black_24dp"
+                    android:tint="@color/gradStart"/>
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_star_black_24dp"
+                    android:tint="@color/gradStart"/>
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_star_black_24dp"
+                    android:tint="@color/gradStart"/>
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_star_black_24dp"
+                    android:tint="@color/gradStart"/>
+                <ImageView
+
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/star"/>
+
+
+
+                <TextView
+                    android:id="@+id/home_recipe_stars_id"
+                    android:textAlignment="center"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="-4dp"
+
+                    android:textSize="17dp"
+                    android:text="5"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Recipe by"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/rDescription_TVID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Smye Sareel"
+                    android:layout_marginLeft="3dp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-light"
+
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/lightgrayy" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_equalizer_black_24dp"
+                        android:tint="@color/gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Nutrition"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/gray" />
+
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_collections_black_24dp"
+                        android:tint="@color/gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="More photos"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--bottom line-->
+            <View
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/lightgrayy"
+                android:layout_marginBottom="-5dp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_timer_black_24dp"
+                    android:tint="@color/gray"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/home_item_shower_prep_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60 m"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prep"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/home_item_shower_cook_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 m"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cook"
+                        android:textSize="16dp"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/home_item_shower_ready_in_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="105 m"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ready in"
+                        android:textSize="16dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--bottom line-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/lightgrayy"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_for_white_space_below_home_item"
+        android:layout_below="@id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/White"/>
+
+    <!--tab layout for home layout recipe reviews -->
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_below="@id/view_for_white_space_below_home_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            app:tabTextColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:id="@+id/view_below_tablayout"
+            android:layout_below="@id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_below="@+id/view_below_tablayout"
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
