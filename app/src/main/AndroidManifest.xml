@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sehrishsheikh.virtualcook">
+    package="com.example.hp.chattapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,24 +13,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login_Via_Account.ChefSideView.BNV"></activity>
-        <activity android:name=".Login_Via_Account.ChefSideView.FirstFragment.Chef_Dishes.ViewImageActivity" />
-        <activity android:name=".Login_Via_Account.ChefSideView.FirstFragment.Chef_Dishes.ChefPostActivity" />
-        <activity android:name=".Chef.ChefPostDetailActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".Login_As_Guest.Home.HomeItemDetail" />
-        <activity android:name=".Pager" />
-        <activity android:name=".DrawerLayoutActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Chef.ChefActivtiy" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".startActivity" />
+        <activity
+            android:name=".loginActivity"
+            android:parentActivityName=".startActivity" />
+        <activity android:name=".startActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".messageActivity"></activity>
+   <service android:name=".myFireBaseMessagingService">
+       <intent-filter>
+           <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+       </intent-filter>
+   </service>
+        <service android:name=".firebaseInstanceIdServices">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+   
+   
     </application>
 
 </manifest>
