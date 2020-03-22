@@ -1,6 +1,7 @@
 package com.sehrishsheikh.virtualcook;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
@@ -12,15 +13,26 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.sehrishsheikh.virtualcook.Chef.ChefActivtiy;
+import com.sehrishsheikh.virtualcook.Login_Via_accountt.W_All_Recipe_fvrt_share_Download.Fragment.SettingsFragment;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -29,6 +41,7 @@ public class LoginActivity extends AppCompatActivity
     Button mBtn_login;
     ProgressBar mProgressBar;
     FirebaseAuth firebaseAuth;         //class that provide firebase
+
 
 
 
@@ -42,7 +55,10 @@ public class LoginActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         // getSupportActionBar().hide();
+
         setContentView(R.layout.activity_login);
+
+
 
         ActionBar actionBar = getActionBar();
         getSupportActionBar().hide();
@@ -93,7 +109,7 @@ public class LoginActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login succesfully ", Toast.LENGTH_SHORT).show();
                             //send user to the mainactivity
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));    //will move user to home activity
+                            startActivity(new Intent(getApplicationContext(), DrawerLayoutActivity.class));    //will move user to home activity
                         } else {
                             Toast.makeText(LoginActivity.this, "Some error occur  " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -130,4 +146,5 @@ public class LoginActivity extends AppCompatActivity
 
 
     }
+
 }
