@@ -1,54 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/splash_bg">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
 
-    <LinearLayout
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        tools:ignore="MissingConstraints">
+    >
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp">
-
+            >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/profile_image"
+                />
             <TextView
-                android:id="@+id/tv_splash1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="Virtual"
-                android:textSize="40dp"/>
-
-            <TextView
-                android:id="@+id/tv_splash2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="CooK"
-                android:textColor="@color/White"
-                android:textSize="40dp" />
-
-            <ImageView
-                android:id="@+id/img_splash"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/logo"
-                android:tint="@color/graydark"/>
-        </LinearLayout>
-
-    </LinearLayout>
+                android:text="username"
+                android:layout_marginLeft="25dp"
+                android:textColor="#fff"
+                android:id="@+id/username"
+                android:textStyle="bold"
+                android:layout_marginStart="25dp"
+                />
 
 
+        </androidx.appcompat.widget.Toolbar>
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab_layout"
+            android:background="@color/colorPrimaryDark"
+            app:tabBackground="@color/colorPrimaryDark"
+            app:tabTextColor="#fff"
+            app:tabIndicator="@color/colorPrimary"
 
-</RelativeLayout>
+
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"
+
+        >
+
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+</LinearLayout>
