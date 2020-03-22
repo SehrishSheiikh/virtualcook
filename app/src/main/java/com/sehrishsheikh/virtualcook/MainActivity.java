@@ -1,75 +1,197 @@
-package com.sehrishsheikh.virtualcook;
+package com.example.hp.chattapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.hp.chattapp.Fragments.chatsFragment;
+import com.example.hp.chattapp.Fragments.profileFragment;
+import com.example.hp.chattapp.Fragments.usersFragment;
+import com.example.hp.chattapp.Model.User;
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
-    TextView tv1,tv2;
-    ImageView img;
+
+
+    CircleImageView profie_image;
+    TextView user_name;
+
+    FirebaseUser firebaseUser;
+    DatabaseReference reference;
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        //for hide top display
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //ending
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getActionBar();
-        getSupportActionBar().hide();
-        //OR getSupportActionBar();
-//        actionBar.hide();
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
 
-        getSupportActionBar().hide();
-
-        //getActionBar().hide();
-        //intialization
-        tv1 = findViewById(R.id.tv_splash1);
-        tv2 = findViewById(R.id.tv_splash2);
-        img = findViewById(R.id.img_splash);
+        //Generating Firebase Token for single device
 
 
-        //animation code
-        Animation myanim = AnimationUtils.loadAnimation(this , R.anim.mytransition);
-        tv1.startAnimation(myanim);
-        tv2.startAnimation(myanim);
-        img.startAnimation(myanim);
-        //end
 
 
-        final Intent intent = new Intent(this ,Pager.class);
 
-        Thread timer = new Thread(){
-            public  void run(){
-                try
+        profie_image=(CircleImageView)findViewById(R.id.profile_image);
+        user_name=(TextView)findViewById(R.id.username);
+
+        firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+
+        reference=FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                User user=dataSnapshot.getValue(User.class);
+                user_name.setText(user.getUsername());
+
+                if (user.getImageUrl().equals("default"))
                 {
-                    sleep(4000);
-                }
-                catch (InterruptedException e)
-                {
-                    e.printStackTrace();
-                }
-                finally
-                {
-                    startActivity(intent);
-                    finish();
+                    profie_image.setImageResource(R.mipmap.ic_launcher);
+
 
                 }
+                else {
+                    Glide.with(getApplicationContext()).load(user.getImageUrl()).into(profie_image);
+
+                }
+
+
             }
-        };
-        timer.start();
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        TabLayout tabLayout=findViewById(R.id.tab_layout);
+        ViewPager viewPager=findViewById(R.id.view_pager);
+
+        ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
+
+        viewPagerAdapter.addfragment(new chatsFragment(),"chats");
+        viewPagerAdapter.addfragment(new usersFragment(),"users");
+        viewPagerAdapter.addfragment(new profileFragment(),"profile");
+
+
+        viewPager.setAdapter(viewPagerAdapter);
+
+        tabLayout.setupWithViewPager(viewPager);
+
+
+
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+       getMenuInflater().inflate(R.menu.menu,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+
+            case R.id.lohout:
+                FirebaseAuth.getInstance().signOut();
+                //add flag other wise app will be crash
+                startActivity(new Intent(MainActivity.this,startActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
+                return true;
+        }
+        return false;
+    }
+   class ViewPagerAdapter extends FragmentPagerAdapter{
+
+
+        private ArrayList<Fragment> fragments;
+        private ArrayList<String> titles;
+
+       ViewPagerAdapter(@NonNull FragmentManager fm) {
+           super(fm);
+           this.fragments = new ArrayList<>();
+           this.titles = new ArrayList<>();
+       }
+
+       public Fragment getItem(int position) {
+           return fragments.get(position);
+
+       }
+
+       @Override
+       public int getCount() {
+           return fragments.size();
+       }
+
+       public void addfragment(Fragment fragment,String title)
+       {
+           fragments.add(fragment);
+           titles.add(title);
+       }
+
+       @Nullable
+       @Override
+       public CharSequence getPageTitle(int position) {
+           return titles.get(position);
+       }
+   }
+   private void status(String status)
+   {
+       reference=FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+       HashMap<String,Object> hashMap=new HashMap<>();
+       hashMap.put("status",status);
+
+       reference.updateChildren(hashMap);
+   }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        status("offline");
+    }
 }
+
+
+
+
+
